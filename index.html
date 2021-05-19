@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="index.css">
+    <title>Detran | Infrações</title>
+</head>
+<body>
+    
+    <header>
+        
+     <img class="img" src="logo.png" alt="Logo Detran">
+        
+    </header>
+    
+    <div class="formulario">
+
+        <h1>Infrações de Trânsito</h1>
+
+        <h2>Gerar penalidades</h2>
+        
+        <div class="l">
+            <div class="l1">
+                <label> Velocidade máxima permitida km/h</label>
+                
+                <label class="vv"> Velocidade do veículo autuado km/h</label>
+            </div>
+
+            <div class="l2">
+                <input class="estilo p" type="text" id="velmax"><br>
+                <input class="estilo p" type="text" id="velv"><br><br>
+            </div>
+
+        </div>
+
+        <input class="botao" type="button" value="CONSULTAR" onclick="veriAuto()">
+        <div id="resultado" ></div><br>
+
+        <h2>Alterar Condutor</h2>
+        
+        <section id="Dados">
+        <label> Informe o nome do condutor</label><br>
+        <input  class="estilo" type="text" id="nome"><br>
+
+        <label> Informe o número da habilitação</label><br>
+        <input  class="estilo" type="text" id="numcarteira"><br><br>
+
+        <div class="final">
+        <input class="botao" type="button" value="ENVIAR DADOS" onclick="enviaDados()">
+                
+        <input class="botao p" type="button" value="GERAR MULTA" onclick="gerarMulta()">
+
+  
+        </div>
+        <div id="resultado1"></div>
+
+        <div id="resultado2"></div>
+
+        <div id="resultado3">
+            <input  class="botao p2" type="button" value="GERAR BOLETO"> 
+        </div>
+
+        
+        
+    </div>
+    
+
+    <script>
+
+        function veriAuto(){
+
+            let gravissima = "7 pontos no prontuário. <br> Multa no valor de R$ 293,47.";
+            let grave = "5 pontos no prontuário. <br> Multa no valor de R$ 195,23.";
+
+            let vm=parseFloat(document.getElementById("velmax").value);
+            let vv=parseFloat(document.getElementById("velv").value);
+
+            if((vv > vm) && (vv <= vm+7)){
+                document.getElementById("resultado").innerHTML =`Advertência. <br> Acima de 7 km/h.`;
+                document.getElementById("resultado").style.backgroundColor ="yellow";
+            }
+            else if((vv > vm+7) && (vv <= vm*1.2)){
+                document.getElementById("resultado").innerHTML =`Autuado(a). <br> Infração Grave. <br> Penalidade: ${grave}`;
+                document.getElementById("resultado").style.backgroundColor ="rgb(92, 9, 9)";
+            }
+            else if((vv > vm*1.2) && (vv <= vm*1.5)){
+                document.getElementById("resultado").innerHTML =` Autuado(a). <br> Infração gravíssima. <br> Penalidade: ${gravissima}`;
+                document.getElementById("resultado").style.backgroundColor ="red";
+            }
+            else if (vv > vm*1.5){
+                document.getElementById("resultado").innerHTML =`Autuado(a). <br> Infração gravíssima. <br> Penalidade: Suspensão do direito de dirigir <br> ${gravissima}`;
+                document.getElementById("resultado").style.backgroundColor ="red";
+            }
+            else{
+                document.getElementById("resultado").innerHTML =`Velocidade permitida`;
+                document.getElementById("resultado").style.backgroundColor ="green";
+            }
+          
+        }
+
+        function enviaDados(){
+            let nome=document.getElementById("nome").value;
+            let numcarteira=parseInt(document.getElementById("numcarteira").value);
+            document.getElementById("resultado1").innerHTML=`Condutor: ${nome} <br> Número da Habilitação: ${numcarteira}`;
+            document.getElementById("resultado1").style.backgroundColor ="yellow";
+        }
+
+        function gerarMulta(){
+            let dados1=document.getElementById("resultado").innerText;
+            let dados2=document.getElementById("resultado1").innerText;
+            let velmax=parseFloat(document.getElementById("velmax").value);
+            let vv=parseFloat(document.getElementById("velv").value);
+            document.getElementById("resultado2").innerHTML=` Ao ${dados2} <br> Por trafegar a ${vv} km/h em uma via de ${velmax} km/h atribui-se: ${dados1}`;
+            document.getElementById("resultado2").style.backgroundColor ="rgb(223, 223, 223)";
+            document.querySelector(".botao.p2").setAttribute('style', 'visibility:visible');
+        }
+    
+    </script>
+
+</body>
+
+<footer>
+    <p>© Copyright 2021. Todos os direitos reservados a Pedro Ferreira.</p>
+</footer>
+
+</html>

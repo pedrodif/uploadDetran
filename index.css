@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap');
+
+
+body{
+ width: 100%;
+ font-family: 'Open Sans';
+ margin: 0 auto;
+}
+
+.img{
+    width: 180px;
+    height: 180px;
+
+}
+
+header{
+    width: 60%;
+    height: 180px;
+    border: solid 0.5px rgb(223, 223, 223);
+    margin: auto;
+    margin-top: 1.5%;
+    text-align: center;
+    border-radius: 3px;
+    box-shadow: 2px 2px 10px 0 rgb(0, 0, 0, 0.2);
+    background-image: url(base.png);
+}
+
+.formulario{
+    width: 60%;
+    text-align: center;
+    margin: auto;
+    margin-top: 1.5%;
+    margin-bottom: 2.5%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    border: solid 0.5px rgb(223, 223, 223);
+    line-height: 35px;
+    border-radius: 3px;
+    box-shadow: 2px 2px 10px 0 rgb(0, 0, 0, 0.2);
+}
+
+.l{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+.l1{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    line-height: 58px;
+    margin-right: 3%;
+}
+
+.vv{
+    margin-top: 3%;
+}
+.l2{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-top: 1.5%;
+}
+
+.estilo{
+    width: 50%;
+    height: 30px;
+    border: solid 0.5px rgb(145, 146, 146);
+    border-radius: 3px;
+}
+
+.estilo.p{
+    width: 20%;
+   
+}
+
+
+.estilo:focus{
+    outline: none;
+}
+
+.botao{
+    width: 20%;
+    height: 30px;
+    background-color: rgb(153, 0, 0);
+    border: none;
+    color: #fff;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.botao.p{
+    margin-left: 2%;
+}
+
+.botao.p2{
+    margin-top: 7%;
+    visibility: hidden;
+}
+
+.botao:hover{
+    background-color: #000;
+}
+
+#resultado{
+    margin: auto;
+    margin-top: 5%;
+    text-align: center;
+    width: 50%;
+    height: 100%;
+    border-radius: 3px;
+}
+
+.final{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+
+}
+
+#resultado1{
+    margin: auto;
+    margin-top: 5%;
+    text-align: center;
+    width: 50%;
+    height: 100%;
+    border-radius: 3px;
+}
+  
+#resultado2{
+    margin: auto;
+    margin-top: 5%;
+    text-align: center;
+    width: 50%;
+    height: 100%;
+    border-radius: 3px;
+}
+
+footer{
+    height: 50px;
+    background-color:rgb(53, 47, 47);
+    color: #fff;
+    text-align: center;
+    padding-top: 3%;
+    font-size: 12px;
+    margin: 0 auto;
+}
+  
